@@ -35,6 +35,18 @@ const projects = [
     stack: ['React', 'Express', 'MongoDB', 'JWT', 'bcrypt'],
     image: AuthImage,
   },
+
+  {
+    id: `blogpost`,
+    index: `04`,
+    title: `blogPost App`,
+    type: `Full Stack`,
+    description: `A full-stack blogging platform with authentication, CRUD operation, and mongoDb integration`,
+    stack: [`react`, `node.js`, `express`, `mongodb`, `jwt`, `docker`, `rest API`],
+    image: null,
+    external: true,
+    githubLink: `https://github.com/KenCasulla/Luto-Blog.git`
+  },
 ]
 
 function Projects() {
@@ -43,7 +55,16 @@ function Projects() {
   const [weatherOpen, setWeatherOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
 
-  const openProject = (id) => setActive(id)
+  const openProject = (project) => {
+    if(project.external) {
+      window.open(project.githubLink, `blank`)
+      return
+    }
+
+    setActive(project.id)
+  }
+
+
   const closeProject = () => setActive(null)
 
   return (
@@ -65,7 +86,7 @@ function Projects() {
             <div
               key={project.id}
               className="group flex flex-col md:flex-row md:items-center gap-4 py-8 cursor-pointer hover:bg-ink/[0.02] transition-colors -mx-4 px-4"
-              onClick={() => openProject(project.id)}
+              onClick={() => openProject(project)}
             >
               {/* Index */}
               <span className="font-mono text-xs text-ink/20 w-8 shrink-0">{project.index}</span>
