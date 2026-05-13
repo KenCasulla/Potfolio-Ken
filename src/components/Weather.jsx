@@ -12,7 +12,7 @@ function Weather() {
     setError('')
     setWeather(null)
     try {
-      const res = await fetch(`http://localhost:3000/weather?city=${encodeURIComponent(city)}`)
+      const res = await fetch(`http://localhost:5000/weather?city=${encodeURIComponent(city)}`)
       if (!res.ok) throw new Error('City not found')
       const data = await res.json()
       setWeather(data)
