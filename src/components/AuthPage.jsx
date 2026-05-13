@@ -15,7 +15,7 @@ function AuthPage() {
     setLoading(true)
     setMessage('')
 
-    const url = isLogin ? 'http://localhost:5000/login' : 'http://localhost:5000/register'
+    const url = isLogin ? 'http://localhost:5001/login' : 'http://localhost:5001/register'
     const body = isLogin ? { email, password } : { username, email, password }
 
     try {
