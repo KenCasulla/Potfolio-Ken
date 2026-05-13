@@ -1,130 +1,135 @@
-# Ken Casulla — Portfolio
+﻿# Ken Casulla — Portfolio
 
-A modern black-and-white full stack developer portfolio built with React, Tailwind CSS, Node.js, and Express. This project showcases my frontend and backend development skills through interactive applications, responsive UI design, authentication systems, and API integration.
+A minimalist full-stack developer portfolio showcasing modern React UI, reusable components, and backend API integration. The site highlights interactive demo projects, responsive layouts, and authentication flows while keeping the design monochrome and polished.
 
-The portfolio is designed with a minimalist aesthetic focused on clean typography, smooth user experience, and responsive layouts across desktop and mobile devices.
+## What’s Included
 
+- Portfolio landing experience with a hero section, about section, and featured work
+- Interactive project showcase with modal demos for Calculator, Weather App, and Auth System
+- Keyboard-enabled calculator built with React and mathjs
+- Weather app that fetches live data through an Express backend and OpenWeatherMap API
+- Full-stack authentication demo with registration, login, JWT tokens, bcrypt hashing, and MongoDB storage
+- External blog project link for additional full-stack work
 
-# Features
+## Features
 
-Responsive modern UI built with React and Tailwind CSS
-
-Minimal black-and-white design with smooth layout structure
-
-Dynamic project showcase with reusable modal components
-User authentication system using JWT and bcrypt
-Weather application integrated with external API data
-Interactive calculator application
-Backend API powered by Express and MongoDB
-Secure user data handling with Mongoose schemas
-Component-based architecture for maintainability and scalability
-
-# Project Purpose
-
-This portfolio was created to demonstrate:
-
-Frontend development skills using React and Tailwind CSS
-Backend API development with Node.js and Express
-Authentication and database integration using MongoDB
-Clean component architecture and reusable UI patterns
-Ability to build full stack applications from scratch
+- Responsive UI optimized for desktop and mobile
+- Clean black-and-white design with subtle hover and transition effects
+- Modular React component structure
+- Backend Express API with secure auth and weather routes
+- MongoDB integration using Mongoose
+- Environment-driven configuration for API keys and secrets
 
 ## Project Structure
 
 ```
 portfolio/
+├── Dockerfile
 ├── index.html
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
-├── .gitignore
-│
 ├── src/
-│   ├── main.jsx              # App entry point
-│   ├── App.jsx               # Root component
-│   ├── index.css             # Global styles + Tailwind
-│   │
-│   ├── assets/               # Images (profile.jpg, weather.jpg)
-│   │
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   ├── assets/
 │   └── components/
-│       ├── NavBar.jsx
-│       ├── Hero.jsx
 │       ├── AboutMe.jsx
-│       ├── Projects.jsx      # Project grid + modals
-│       ├── Calculator.jsx
-│       ├── Weather.jsx
 │       ├── AuthPage.jsx
+│       ├── Calculator.jsx
+│       ├── Footer.jsx
+│       ├── Hero.jsx
 │       ├── Modal.jsx
-│       └── Footer.jsx
-│
+│       ├── NavBar.jsx
+│       ├── Projects.jsx
+│       └── Weather.jsx
 └── server/
-    ├── server.js             # Express API
+    ├── server.js
     ├── package.json
-    ├── .env.example          # Copy to .env and fill in values
+    ├── .env
     └── models/
-        └── User.js           # Mongoose user schema
-```
-
-
-# Technologies Used
-
-# Frontend
-React 18
-Vite
-Tailwind CSS
-
-# Backend
-Node.js
-Express.js
-
-# Database
-MongoDB
-Mongoose
-
-# Authentication
-JWT (JSON Web Token)
-bcrypt password hashing
-
-# External APIs
-OpenWeatherMap API
-
-## Setup
-
-### Frontend
-
-```bash
-npm install
-npm run dev
-```
-
-### Backend
-
-```bash
-cd server
-npm install
-cp .env.example .env
-# Fill in MONGO_URI, WEATHER_API_KEY, JWT_SECRET
-npm run dev
+        └── User.js
 ```
 
 ## Tech Stack
 
-- **Frontend:** React 18, Vite, Tailwind CSS
-- **Backend:** Node.js, Express
-- **Database:** MongoDB + Mongoose
-- **Auth:** JWT + bcrypt
-- **Weather:** OpenWeatherMap API
+- Frontend: React 18, Vite, Tailwind CSS
+- Backend: Node.js, Express
+- Database: MongoDB, Mongoose
+- Authentication: JWT, bcrypt
+- API Integration: OpenWeatherMap API
+- Utilities: mathjs
 
-# Key Learning Outcomes
+## Local Setup
 
-Through building this project, I improved my understanding of:
+### 1. Install frontend dependencies
 
-React component architecture
-State management and props handling
-REST API development
-Authentication workflows
-MongoDB database integration
-Responsive web design
-Secure backend practices
-API consumption and asynchronous data fetching
+```bash
+npm install
+```
+
+### 2. Install backend dependencies
+
+```bash
+cd server
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in `server/` with the following values:
+
+```env
+MONGO_URI=your_mongo_connection_string
+WEATHER_API_KEY=your_openweathermap_api_key
+JWT_SECRET=your_jwt_secret
+```
+
+### 4. Run the frontend and backend
+
+In the root folder:
+
+```bash
+npm run dev
+```
+
+In the `server/` folder:
+
+```bash
+npm run dev
+```
+
+The frontend runs on Vite, and the backend server listens on port `3000` by default.
+
+## Running with Docker
+
+Build the image:
+
+```bash
+docker build -t portfolio .
+```
+
+Run the container:
+
+```bash
+docker run -p 80:80 portfolio
+```
+
+## Notes
+
+- The Weather App uses the backend route at `/weather?city=` to request OpenWeatherMap data.
+- The Auth System demo sends login/register requests to `http://localhost:3000/login` and `http://localhost:3000/register`.
+- A linked external blog project is included in the featured work section.
+
+## Learnings
+
+This portfolio project demonstrates:
+
+- building reusable React components
+- creating a polished responsive user interface
+- connecting frontend apps with a backend API
+- implementing authentication and secure password handling
+- working with external REST APIs
+- organizing a full-stack project for real-world deployment
