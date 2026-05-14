@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://potfolio-ken.onrender.com'
+    'https://kenzu-portfolio.onrender.com'
   ],
   credentials: true
 }))
