@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Weather() {
   const [city, setCity] = useState('')
@@ -18,12 +18,13 @@ function Weather() {
 
       const res = await fetch(`${API_URL}/weather?city=${encodeURIComponent(city)}`)
 
-      if (!res.ok) throw new Error('City not found')
-
       const data = await res.json()
 
-      setWeather(data)
+      if (!res.ok) {
+    throw new Error(data.error || data.message)
+  }
       
+      setWeather(data)
     } catch (err) {
       setError(err.message)
     } finally {
@@ -31,23 +32,22 @@ function Weather() {
     }
   }
 
-  useEffect(() => {
-    const handleKey = (e) => { if (e.key === 'Enter') fetchWeather() }
-    window.addEventListener('keydown', handleKey)
-    return () => window.removeEventListener('keydown', handleKey)
-  }, [city])
-
   return (
     <div className="space-y-4">
       {/* Input row */}
       <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Enter city…"
-          className="flex-1 font-mono text-sm border border-ink/20 bg-transparent px-3 py-2.5 outline-none focus:border-ink transition-colors placeholder:text-ink/30"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
+<input
+  type="text"
+  placeholder="Enter city…"
+  className="flex-1 font-mono text-sm border border-ink/20 bg-transparent px-3 py-2.5 outline-none focus:border-ink transition-colors placeholder:text-ink/30"
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter') {
+      fetchWeather()
+    }
+  }}
+/>
         <button
           onClick={fetchWeather}
           className="font-mono text-xs tracking-widest uppercase px-4 py-2.5 bg-ink text-paper hover:bg-ink/80 transition-colors"
