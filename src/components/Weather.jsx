@@ -11,11 +11,19 @@ function Weather() {
     setLoading(true)
     setError('')
     setWeather(null)
+
     try {
-      const res = await fetch(`http://localhost:5001/weather?city=${encodeURIComponent(city)}`)
+      
+      const API_URL = import.meta.env.VITE_API_URL
+
+      const res = await fetch(`${API_URL}/weather?city=${encodeURIComponent(city)}`)
+
       if (!res.ok) throw new Error('City not found')
+
       const data = await res.json()
+
       setWeather(data)
+      
     } catch (err) {
       setError(err.message)
     } finally {
