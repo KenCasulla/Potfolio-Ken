@@ -62,6 +62,11 @@ portfolio/
 - API Integration: OpenWeatherMap API
 - Utilities: mathjs
 
+## Deployment
+
+- Frontend and backend are deployed on Render.
+- The app is available live with Render-managed hosting for both services.
+
 ## Local Setup
 
 ### 1. Install frontend dependencies
