@@ -2,6 +2,7 @@ import { useState } from 'react'
 import WeatherPic from '../assets/weather.jpg'
 import ProfilePic from '../assets/profile.jpg'
 import AuthImage from '../assets/image.png'
+import BlogImage from '..//assets/Blog.jpg'
 import Modal from './Modal.jsx'
 import Calculator from './Calculator.jsx'
 import Weather from './Weather.jsx'
@@ -43,7 +44,7 @@ const projects = [
     type: `Full Stack`,
     description: `A full-stack blogging platform with authentication, CRUD operation, and mongoDb integration`,
     stack: [`react`, `node.js`, `express`, `mongodb`, `jwt`, `docker`, `rest API`],
-    image: null,
+    image: BlogImage,
     external: true,
     githubLink: `https://github.com/KenCasulla/Luto-Blog.git`
   },
