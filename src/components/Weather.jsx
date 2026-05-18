@@ -6,31 +6,35 @@ function Weather() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const fetchWeather = async () => {
-    if (!city.trim()) return
-    setLoading(true)
-    setError('')
-    setWeather(null)
+const fetchWeather = async () => {
+  if (!city.trim()) return
 
-    try {
-      
-      const API_URL = import.meta.env.VITE_API_URL
+  setLoading(true)
+  setError('')
+  setWeather(null)
 
-      const res = await fetch(`${API_URL}/weather?city=${encodeURIComponent(city)}`)
+  try {
+    const API_URL = import.meta.env.VITE_API_URL
 
-      const data = await res.json()
+    console.log("API_URL:", API_URL)
 
-      if (!res.ok) {
-    throw new Error(data.error || data.message)
-  }
-      
-      setWeather(data)
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setLoading(false)
+    const res = await fetch(
+      `${API_URL}/weather?city=${encodeURIComponent(city)}`
+    )
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      throw new Error(data.error || data.message)
     }
+
+    setWeather(data)
+  } catch (err) {
+    setError(err.message)
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <div className="space-y-4">
