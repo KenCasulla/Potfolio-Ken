@@ -24,7 +24,7 @@ function Footer() {
               href="mailto:ken@example.com"
               className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-paper border-b border-paper/20 pb-0.5 hover:border-paper/60 transition-colors"
             >
-              ken@example.com →
+              ken.revilla57@gmail.com →
             </a>
           </div>
         </div>
@@ -39,7 +39,7 @@ function Footer() {
             {[
               { label: 'GitHub', href: 'https://github.com/KenCasulla' },
               { label: 'LinkedIn', href: 'https://linkedin.com/in/' },
-              { label: 'Email', href: 'mailto:ken@example.com' },
+              { label: 'Email', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ken.revilla57@gmail.com' },
             ].map(({ label, href }) => (
               <a
                 key={label}

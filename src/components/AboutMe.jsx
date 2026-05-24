@@ -1,7 +1,7 @@
 import ProfilePic from '../assets/profile.jpg'
 
 function AboutMe() {
-  const skills = ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'Git', 'Vite', 'Figma']
+  const skills = ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'Git', 'Vite', 'Figma', 'Docker', 'Bootstrap']
 
   return (
     <section id="about" className="min-h-screen flex items-center px-6 py-24 bg-ink text-paper">
@@ -48,7 +48,7 @@ function AboutMe() {
                 I'm a junior web developer passionate about building clean, fast, and functional web experiences. I focus on writing code that is readable, well-structured, and easy to maintain.
               </p>
               <p className="font-body text-paper/50 leading-relaxed text-sm">
-                When I'm not coding, I'm exploring new technologies, contributing to projects, and sharpening my eye for good design.
+                Outside of development, I enjoy exploring new technologies, contributing to projects, and refining my eye for clean design.
               </p>
             </div>
 
