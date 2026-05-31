@@ -1,4 +1,5 @@
 import ProfilePic from '../assets/profile.jpg'
+import ImageKo from '../assets/ProfileImage.jpg'
 
 function AboutMe() {
   const skills = ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'Git', 'Vite', 'Figma', 'Docker', 'Bootstrap']
@@ -20,7 +21,7 @@ function AboutMe() {
               {/* Offset border frame */}
               <div className="absolute -top-3 -left-3 w-full h-full border border-paper/10" />
               <img
-                src={ProfilePic}
+                src={ImageKo}
                 alt="Ken Casulla"
                 className="w-full aspect-square object-cover grayscale"
                 onError={(e) => {
