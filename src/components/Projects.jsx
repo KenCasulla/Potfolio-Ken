@@ -3,6 +3,7 @@ import WeatherPic from '../assets/weather.jpg'
 import ProfilePic from '../assets/profile.jpg'
 import AuthImage from '../assets/image.png'
 import BlogImage from '..//assets/Blog.jpg'
+import CalcImage from '../assets/Calculator.jpg'
 import Modal from './Modal.jsx'
 import Calculator from './Calculator.jsx'
 import Weather from './Weather.jsx'
@@ -16,7 +17,7 @@ const projects = [
     type: 'Web App',
     description: 'A keyboard-supported calculator built with React and mathjs. Features real-time evaluation and a minimal interface.',
     stack: ['React', 'Vite', 'Tailwind CSS', 'mathjs'],
-    image: ProfilePic,
+    image: CalcImage,
   },
   {
     id: 'weather',
